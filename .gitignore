@@ -172,3 +172,11 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# ... other ignores ...
+
+# Backend specific
+backend/venv/
+backend/data/
+# Optional: If models are large
+# backend/model/*.pkl
