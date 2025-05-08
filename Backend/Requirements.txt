@@ -9,5 +9,8 @@ beautifulsoup4
 scikit-learn
 matplotlib
 seaborn
+wordcloud
+textstat
+tqdm
 # urllib and zipfile are built-in
 # pickle is a built-in Python module, no need to list it
