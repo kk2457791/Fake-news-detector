@@ -224,4 +224,3 @@ If you have time during the hackathon, consider these enhancements:
   - [Snopes](https://www.snopes.com/)
   - [FactCheck.org](https://www.factcheck.org/)
 
-Good luck with your hackathon project!
