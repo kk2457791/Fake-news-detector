@@ -1,1 +1,146 @@
+// components/ResultDisplay.jsx
+import React from 'react';
 
+const ResultDisplay = ({ result }) => {
+  const { category, confidence } = result;
+  
+  const getCategoryColor = () => {
+    switch (category.toLowerCase()) {
+      case 'real':
+        return 'bg-green-100 border-green-500 text-green-700';
+      case 'fake':
+        return 'bg-red-100 border-red-500 text-red-700';
+      case 'needs fact-checking':
+        return 'bg-yellow-100 border-yellow-500 text-yellow-700';
+      default:
+        return 'bg-gray-100 border-gray-500 text-gray-700';
+    }
+  };
+
+  const getConfidenceBar = () => {
+    const width = `${confidence}%`;
+    const color = confidence > 75 ? 'bg-blue-600' : confidence > 50 ? 'bg-blue-400' : 'bg-blue-300';
+    
+    return (
+      <div className="h-4 w-full bg-gray-200 rounded-full overflow-hidden">
+        <div 
+          className={`h-full ${color} rounded-full`} 
+          style={{ width }}
+        ></div>
+      </div>
+    );
+  };
+
+  return (
+    <div className="border rounded-lg overflow-hidden">
+      <div className="p-4 border-b">
+        <h2 className="text-lg font-semibold text-gray-800">Analysis Results</h2>
+      </div>
+      
+      <div className="p-4">
+        <div className="mb-4">
+          <div className={`p-4 border-l-4 rounded ${getCategoryColor()}`}>
+            <p className="font-bold">Classification: {category}</p>
+          </div>
+        </div>
+        
+        <div>
+          <div className="flex justify-between mb-1">
+            <span className="text-sm font-medium text-gray-700">Confidence</span>
+            <span className="text-sm font-medium text-gray-700">{confidence}%</span>
+          </div>
+          {getConfidenceBar()}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ResultDisplay;
+
+// components/FactCheckSuggestions.jsx
+import React from 'react';
+
+const FactCheckSuggestions = ({ category }) => {
+  // Provide relevant fact-checking sources based on the content category
+  const getFactCheckSources = () => {
+    const commonSources = [
+      { name: 'Snopes', url: 'https://www.snopes.com' },
+      { name: 'FactCheck.org', url: 'https://www.factcheck.org' },
+      { name: 'PolitiFact', url: 'https://www.politifact.com' },
+    ];
+    
+    // Add category-specific sources
+    if (category?.toLowerCase() === 'fake') {
+      return [
+        ...commonSources,
+        { name: 'MediaBiasFactCheck', url: 'https://mediabiasfactcheck.com' }
+      ];
+    }
+    
+    if (category?.toLowerCase() === 'needs fact-checking') {
+      return [
+        ...commonSources,
+        { name: 'Reuters Fact Check', url: 'https://www.reuters.com/fact-check' }
+      ];
+    }
+    
+    return commonSources;
+  };
+
+  return (
+    <div className="border rounded-lg overflow-hidden">
+      <div className="p-4 border-b">
+        <h2 className="text-lg font-semibold text-gray-800">Fact Check Resources</h2>
+      </div>
+      
+      <div className="p-4">
+        <p className="text-gray-600 mb-4">
+          Remember to verify information with reliable sources before sharing.
+        </p>
+        
+        <ul className="space-y-2">
+          {getFactCheckSources().map((source, index) => (
+            <li key={index}>
+              <a 
+                href={source.url} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline flex items-center"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+                {source.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default FactCheckSuggestions;
+
+// components/LoadingSpinner.jsx
+import React from 'react';
+
+const LoadingSpinner = () => {
+  return (
+    <div className="flex items-center justify-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+    </div>
+  );
+};
+
+export default LoadingSpinner;
+
+// App.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  }
