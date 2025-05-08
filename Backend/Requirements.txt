@@ -1,0 +1,10 @@
+Flask
+Flask-CORS
+joblib
+numpy
+pandas
+nltk
+requests
+beautifulsoup4
+scikit-learn
+# pickle is a built-in Python module, no need to list it
