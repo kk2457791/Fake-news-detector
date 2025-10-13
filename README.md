@@ -2,7 +2,7 @@
 A machine learning tool to detect fake news
 # Fake News Detector - Hackathon Project Setup
 
-This guide will help you set up and run the Fake News Detector project for your hackathon. The project consists of a React frontend and a Flask backend with machine learning capabilities.
+This guide will help you set up and run the Fake News Detector project . The project consists of a React frontend and a Flask backend with machine learning capabilities.
 
 ## Project Structure
 
