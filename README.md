@@ -145,8 +145,6 @@ python model_training.py
 
 ## Extending the Project (Hackathon Ideas)
 
-If you have time during the hackathon, consider these enhancements:
-
 1. **Improve the ML Model:**
    - Use more advanced NLP techniques like BERT or other transformer models
    - Implement ensemble methods by combining multiple classifiers
@@ -174,23 +172,6 @@ If you have time during the hackathon, consider these enhancements:
    - Use this feedback to improve the model over time
    - Implement a simple dashboard to show community feedback stats
 
-## Presentation Tips for the Hackathon
-
-1. **Demo Preparation:**
-   - Prepare a few example articles (both real and fake) to demonstrate during your presentation
-   - Make sure your demo can work offline in case of connectivity issues
-   - Have screenshots ready as a backup
-
-2. **Key Points to Cover:**
-   - The social problem your project addresses
-   - Your technical approach and architecture
-   - ML model features and accuracy
-   - Live demo of the application
-   - Future enhancements you would make with more time
-
-3. **Technical Challenges:**
-   - Be prepared to discuss the challenges you faced and how you overcame them
-   - Highlight any clever solutions or optimizations you implemented
 
 ## Troubleshooting
 
