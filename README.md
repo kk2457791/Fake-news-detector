@@ -143,36 +143,6 @@ For demonstration purposes, the application can run with a mock model. To train 
 python model_training.py
 ```
 
-## Extending the Project (Hackathon Ideas)
-
-1. **Improve the ML Model:**
-   - Use more advanced NLP techniques like BERT or other transformer models
-   - Implement ensemble methods by combining multiple classifiers
-   - Add feature engineering to extract more meaningful patterns from text
-
-2. **Enhance the Web Interface:**
-   - Add a history feature to save previous analysis results
-   - Implement dark mode
-   - Add visualizations showing what parts of the text triggered the classification
-   - Create a dashboard showing statistics of analyzed content
-
-3. **Build the Browser Extension:**
-   - Create a simple Chrome extension that can analyze content on the current page
-   - Add highlighting of potentially misleading content directly on web pages
-   - Implement a popup with the analysis results when hovering over a paragraph
-
-4. **Improve Content Analysis:**
-   - Add source credibility checking by comparing against a database of known sources
-   - Implement cross-reference checking with other news articles
-   - Add sentiment analysis to detect emotional manipulation in text
-   - Implement image analysis for detecting manipulated images
-
-5. **User Feedback System:**
-   - Add a way for users to provide feedback on analysis results
-   - Use this feedback to improve the model over time
-   - Implement a simple dashboard to show community feedback stats
-
-
 ## Troubleshooting
 
 ### Common Issues:
