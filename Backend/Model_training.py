@@ -360,3 +360,11 @@ import pickle
 # Assuming your vectorizer variable is named 'vectorizer'
 with open("model/tfidf_vectorizer.pkl", "wb") as f:
     pickle.dump(vectorizer, f)
+import pickle
+import os
+
+os.makedirs("model", exist_ok=True)
+
+#  replace tfidf_vectorizer with the actual name you found
+with open("model/tfidf_vectorizer.pkl", "wb") as f:
+    pickle.dump(tfidf_vectorizer, f)
