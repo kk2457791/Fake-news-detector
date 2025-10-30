@@ -237,7 +237,11 @@ def train_model(df):
     print("Saving the best model...")
     with open("model/fake_news_model.pkl", "wb") as f:
         pickle.dump(best_model, f)
-    
+    # Extract and save the vectorizer from the best model pipeline
+vectorizer = best_model.named_steps['vectorizer']
+
+with open("model/tfidf_vectorizer.pkl", "wb") as f:
+    pickle.dump(vectorizer, f)
     # Save a sample text for testing
     with open("model/sample_texts.pkl", "wb") as f:
         sample_texts = {
@@ -355,16 +359,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-import pickle
-
-# Assuming your vectorizer variable is named 'vectorizer'
+    vectorizer = best_model.named_steps['vectorizer']
 with open("model/tfidf_vectorizer.pkl", "wb") as f:
     pickle.dump(vectorizer, f)
-import pickle
-import os
-
-os.makedirs("model", exist_ok=True)
-
-#  replace tfidf_vectorizer with the actual name you found
-with open("model/tfidf_vectorizer.pkl", "wb") as f:
-    pickle.dump(tfidf_vectorizer, f)
