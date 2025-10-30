@@ -355,3 +355,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+import pickle
+
+# Assuming your vectorizer variable is named 'vectorizer'
+with open("model/tfidf_vectorizer.pkl", "wb") as f:
+    pickle.dump(vectorizer, f)
